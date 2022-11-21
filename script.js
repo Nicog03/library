@@ -83,4 +83,28 @@ function createForm() {
     form.appendChild(createButton)
 }
 
+function createBookCard() {
+
+    let container = document.createElement('div')
+    let bookTitle = document.createElement('h3')
+    let bookAuthor = document.createElement('h4')
+    let bookPages = document.createElement('p')
+    let bookReadStatus = document.createElement('p')
+
+    for (let i=0; i < library.length; i++) {
+        bookTitle.textContent = library[i].title
+        bookAuthor.textContent = library[i].author
+        bookPages.textContent = library[i].pages
+        bookReadStatus.textContent = library[i].read
+
+        container.appendChild(bookTitle)
+        container.appendChild(bookAuthor)
+        container.appendChild(bookPages)
+        container.appendChild(bookReadStatus)
+
+        body.appendChild(container)
+    }
+
+} 
+
 button.onclick = () => {createForm()}
