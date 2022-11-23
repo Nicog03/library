@@ -14,13 +14,13 @@ body {
     display: grid;
     gap: 10px;
     grid-auto-rows: 200px;
-    grid-template: repeat(auto-fit, 200px) / repeat(auto-fit, 150px);
+    grid-template: repeat(auto-fit, 250px) / repeat(auto-fit, 200px);
 }
 
 body > button, 
 body > div {
-    height: 200px;
-    width: 150px;
+    height: 250px;
+    width: 200px;
     border: black solid 3px;
     box-shadow: black 1px 1px, 2px 2px, 3px 3px;
     cursor: pointer;
@@ -33,6 +33,7 @@ body > button {
 body > div  {
     display: grid;
     padding: 5px;
+    grid-template-rows: auto 1fr auto auto;
 }
 
 body > div h3 {
@@ -150,4 +151,10 @@ form div:last-of-type {
     height: 20px;
     width: 20px;
     border: black solid 3px;
+    cursor: pointer;
+    transition: ease-out 0.3s;
+}
+
+#read-input:hover {
+    border: black solid 5px
 }
