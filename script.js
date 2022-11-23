@@ -74,6 +74,7 @@ function createForm() {
     createButton.onclick = () => {
         library.push(new Book(bookTitleInput.value, bookAuthorInput.value, bookPagesInput.value, readStatus))
 
+        createBookCard()
         form.remove()
     }
     
