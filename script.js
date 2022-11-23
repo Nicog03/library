@@ -12,6 +12,8 @@ class Book {
 
 let library = []
 
+
+
 function createForm() {
     let form = document.createElement('form')
     
@@ -47,15 +49,25 @@ function createForm() {
     
     //read input segment
     let readDiv = document.createElement('div')
-    let bookReadLabel = document.createElement('label')
-    bookReadLabel.setAttribute('for', 'read-input')
-    bookReadLabel.textContent = 'Read'
+    let readStatusLabel = document.createElement('label')
+    readStatusLabel.setAttribute('for', 'read-input')
+    readStatusLabel.textContent = 'Read'
+
+    let readStatusInput = document.createElement('button')
+    readStatusInput.setAttribute('type', 'button')
+    readStatusInput.setAttribute('id', 'read-input')
     
-    let bookReadInput = document.createElement('input')
-    bookReadInput.setAttribute('type', 'checkbox')
-    bookReadInput.setAttribute('id', 'read-input')
-    bookReadInput.setAttribute('placehodler', ' ')
-    
+    let readStatus = false;
+    readStatusInput.onclick = () => {
+         if (readStatus) {
+            readStatus = false
+            readStatusInput.style.background = 'white'
+        } else {
+            readStatus = true
+            readStatusInput.style.background = 'black'
+        }
+    }
+
     //button segment
     let createButton = document.createElement('button')
     createButton.setAttribute('type', 'button')
@@ -78,8 +90,8 @@ function createForm() {
     pagesDiv.appendChild(bookPagesInput)
     pagesDiv.appendChild(bookPagesLabel)
     form.appendChild(readDiv)
-    readDiv.appendChild(bookReadInput)
-    readDiv.appendChild(bookReadLabel)
+    readDiv.appendChild(readStatusInput) //aqui
+    readDiv.appendChild(readStatusLabel)  //aqui
     form.appendChild(createButton)
 }
 
