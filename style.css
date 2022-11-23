@@ -7,6 +7,16 @@
     font-family: "Shippori Antique", sans-serif;
 }
 
+body {
+    min-height: 100vh;
+    max-height: fit-content;
+
+    display: grid;
+    gap: 10px;
+    grid-auto-rows: 200px;
+    grid-template: repeat(auto-fit, 200px) / repeat(auto-fit, 150px);
+}
+
 body > button, 
 body > div {
     height: 200px;
