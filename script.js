@@ -73,6 +73,8 @@ function createForm() {
     
     createButton.onclick = () => {
         library.push(new Book(bookTitleInput.value, bookAuthorInput.value, bookPagesInput.value, readStatus))
+
+        form.remove()
     }
     
     //appending everything to page
@@ -88,8 +90,8 @@ function createForm() {
     pagesDiv.appendChild(bookPagesInput)
     pagesDiv.appendChild(bookPagesLabel)
     form.appendChild(readDiv)
-    readDiv.appendChild(readStatusInput) //aqui
-    readDiv.appendChild(readStatusLabel)  //aqui
+    readDiv.appendChild(readStatusInput)
+    readDiv.appendChild(readStatusLabel)
     form.appendChild(createButton)
 }
 
