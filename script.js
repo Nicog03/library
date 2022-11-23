@@ -107,4 +107,6 @@ function createBookCard() {
 
 } 
 
-button.onclick = () => {createForm()}
+button.onclick = () => {
+    !document.querySelector('form') ? createForm() : null
+}
