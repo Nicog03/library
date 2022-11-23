@@ -12,8 +12,6 @@ class Book {
 
 let library = []
 
-
-
 function createForm() {
     let form = document.createElement('form')
     
@@ -74,7 +72,7 @@ function createForm() {
     createButton.textContent = 'Create Book'
     
     createButton.onclick = () => {
-        library.push(new Book(bookTitleInput.value, bookAuthorInput.value, bookPagesInput.value, bookReadInput.value))
+        library.push(new Book(bookTitleInput.value, bookAuthorInput.value, bookPagesInput.value, readStatus))
     }
     
     //appending everything to page
