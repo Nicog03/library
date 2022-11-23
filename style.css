@@ -53,7 +53,7 @@ form div:nth-child(3) {
 }
 
 
-div label {
+div:not(:last-of-type) label {
     position: absolute;
     left: 0;
     color: grey;
@@ -110,14 +110,8 @@ form > button {
 
 div:last-of-type {
     align-items: center;
-}
-
-div:last-of-type label {
-    position: static;
-    padding: none;
-    background-color: black;
-    color: white;
-    padding: 5px 10px;
+    text-align: center;
+    gap: 10px;
 }
 
 #read-input {
