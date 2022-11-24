@@ -15,6 +15,15 @@ let library = []
 function createForm() {
     let form = document.createElement('form')
     
+    //close button
+    let closeButton = document.createElement('button')
+    closeButton.setAttribute('type', 'button')
+    closeButton.textContent = '×'
+
+    closeButton.onclick = () => {
+        form.remove()
+    }
+
     //title input segment
     let titleDiv = document.createElement('div')
     let bookTitleLabel = document.createElement('label')
@@ -81,6 +90,7 @@ function createForm() {
     //appending everything to page
     body.appendChild(form)
     
+    form.appendChild(closeButton)
     form.appendChild(titleDiv)
     titleDiv.appendChild(bookTitleInput)
     titleDiv.appendChild(bookTitleLabel)
