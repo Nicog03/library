@@ -118,6 +118,17 @@ function createBookCard() {
         body.appendChild(container)
     }
 
+    let oldButton = document.querySelector('button')
+    oldButton.remove()
+
+    let button = document.createElement('button')
+    button.setAttribute('type', 'button')
+    button.textContent = '+'
+    body.appendChild(button)
+
+    button.onclick = () => {
+        !document.querySelector('form') ? createForm() : null
+    }
 } 
 
 button.onclick = () => {
