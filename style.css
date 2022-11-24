@@ -78,8 +78,11 @@ form div {
 
 form button:first-child {
     grid-column: 2 / 3;
+    padding: 1px 5px;
+    font-weight: 900;
 }
 
+ 
 form div:first-child {
     grid-column: 1 / -1;
 }
