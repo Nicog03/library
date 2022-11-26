@@ -109,20 +109,32 @@ function createBookCard() {
     let bookTitle = document.createElement('h3')
     let bookAuthor = document.createElement('h4')
     let bookPages = document.createElement('p')
-    let bookReadStatus = document.createElement('p')
+    let bookReadStatus = document.createElement('div')
+    bookReadStatus.classList.add('read-status')
 
     for (let i=0; i < library.length; i++) {
         bookTitle.textContent = library[i].title
         bookAuthor.textContent = library[i].author
         bookPages.textContent = library[i].pages
-        bookReadStatus.textContent = library[i].read
+
+        bookReadStatus.classList.remove('true')
+        bookReadStatus.classList.remove('false')
+
+        library[i].read ? bookReadStatus.classList.add('true') :
+        bookReadStatus.classList.add('false')
 
         bookReadStatus.onclick = () => {
-            library[i].read ?  library[i].read = false : 
-            library[i].read = true
+            if (library[i].read) {
+                bookReadStatus.classList.remove('true')
+                bookReadStatus.classList.add('false')
+                library[i].read = false
 
-            library[i].read ? bookReadStatus.textContent = 'true' :
-            bookReadStatus.textContent = 'false'
+
+            } else {
+                bookReadStatus.classList.remove('false')
+                bookReadStatus.classList.add('true')
+                library[i].read = true
+            }
         }
 
         container.appendChild(bookTitle)
