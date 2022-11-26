@@ -1,6 +1,3 @@
-const button = document.querySelector('button')
-const body = document.querySelector('body')
-
 class Book {
     constructor(title, author, pages, read) {
         this.title = title
@@ -120,6 +117,14 @@ function createBookCard() {
         bookPages.textContent = library[i].pages
         bookReadStatus.textContent = library[i].read
 
+        bookReadStatus.onclick = () => {
+            library[i].read ?  library[i].read = false : 
+            library[i].read = true
+
+            library[i].read ? bookReadStatus.textContent = 'true' :
+            bookReadStatus.textContent = 'false'
+        }
+
         container.appendChild(bookTitle)
         container.appendChild(bookAuthor)
         container.appendChild(bookPages)
@@ -140,6 +145,9 @@ function createBookCard() {
         !document.querySelector('form') ? createForm() : null
     }
 } 
+
+const body = document.querySelector('body')
+const button = document.querySelector('button')
 
 button.onclick = () => {
     !document.querySelector('form') ? createForm() : null
