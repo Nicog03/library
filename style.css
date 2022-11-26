@@ -175,3 +175,34 @@ form div:last-of-type {
 #read-input:hover {
     border: black solid 5px
 }
+
+.read-status {
+    position: relative;
+    height: 20px;
+    width: 40px;
+    border: black solid 3px;
+    justify-self: end;
+}
+
+.read-status::after {
+    height: 15px;
+    width: 17px;
+}
+
+.false::after {
+    content: '';
+    position: absolute;
+    left: auto;
+    right: 0;
+    display: inline-block;
+    background-color: black;
+}
+
+.true::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: auto;
+    display: inline-block;
+    background-color: black;
+}
