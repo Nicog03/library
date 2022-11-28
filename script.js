@@ -109,7 +109,8 @@ function createBookCard() {
     let bookTitle = document.createElement('h3')
     let bookAuthor = document.createElement('h4')
     let bookPages = document.createElement('p')
-    let bookReadStatus = document.createElement('div')
+    let bookReadStatus = document.createElement('button')
+    bookReadStatus.setAttribute('type', 'button')
     bookReadStatus.classList.add('read-status')
 
     for (let i=0; i < library.length; i++) {
