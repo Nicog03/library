@@ -21,7 +21,7 @@ function createForm() {
         form.remove()
     }
 
-    //title input segment
+//title input segment
     let titleDiv = document.createElement('div')
     let bookTitleLabel = document.createElement('label')
     bookTitleLabel.setAttribute('for', 'title-input')
@@ -55,20 +55,21 @@ function createForm() {
     let readDiv = document.createElement('div')
     let readStatusLabel = document.createElement('label')
     readStatusLabel.setAttribute('for', 'read-input')
-    readStatusLabel.textContent = 'Read'
+    readStatusLabel.textContent = 'Have you read it?'
 
     let readStatusInput = document.createElement('button')
+    readStatusInput.textContent = 'no'
     readStatusInput.setAttribute('type', 'button')
     readStatusInput.setAttribute('id', 'read-input')
     
     let readStatus = false;
     readStatusInput.onclick = () => {
          if (readStatus) {
+            readStatusInput.textContent = 'no'
             readStatus = false
-            readStatusInput.style.background = 'white'
         } else {
+            readStatusInput.textContent = 'yes'
             readStatus = true
-            readStatusInput.style.background = 'black'
         }
     }
 
@@ -98,8 +99,8 @@ function createForm() {
     pagesDiv.appendChild(bookPagesInput)
     pagesDiv.appendChild(bookPagesLabel)
     form.appendChild(readDiv)
-    readDiv.appendChild(readStatusInput)
     readDiv.appendChild(readStatusLabel)
+    readDiv.appendChild(readStatusInput)
     form.appendChild(createButton)
 }
 
@@ -146,7 +147,7 @@ function createBookCard() {
         body.appendChild(container)
     }
 
-    let oldButton = document.querySelector('button')
+    let oldButton = document.querySelector('body > button')
     oldButton.remove()
 
     let button = document.createElement('button')
