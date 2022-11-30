@@ -52,6 +52,15 @@ main > div  {
     position: relative;
 }
 
+main > div > div {
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: grey;
+    color: white;
+}
+
 main > div h3 {
     font-size: 1.5em;
 }
