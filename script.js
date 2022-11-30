@@ -34,6 +34,7 @@ function createForm() {
     let bookTitleInput = document.createElement('input')
     bookTitleInput.setAttribute('id', 'title-input')
     bookTitleInput.setAttribute('placeholder', ' ')
+    bookTitleInput.setAttribute('required', '')
     
     //author input segment
     let authorDiv = document.createElement('div')
@@ -44,6 +45,7 @@ function createForm() {
     let bookAuthorInput = document.createElement('input')
     bookAuthorInput.setAttribute('id', 'author-input')
     bookAuthorInput.setAttribute('placeholder', ' ')
+    bookAuthorInput.setAttribute('required', '')
     
     //pages input segment
     let pagesDiv = document.createElement('div')
@@ -54,6 +56,7 @@ function createForm() {
     let bookPagesInput = document.createElement('input')
     bookPagesInput.setAttribute('id', 'pages-input')
     bookPagesInput.setAttribute('placeholder', ' ')
+    bookPagesInput.setAttribute('required', '')
     
     //read input segment
     let readDiv = document.createElement('div')
@@ -79,15 +82,19 @@ function createForm() {
 
     //button segment
     let createButton = document.createElement('button')
-    createButton.setAttribute('type', 'button')
     createButton.textContent = 'Create Book'
     
     createButton.onclick = () => {
-        library.push(new Book(bookTitleInput.value, bookAuthorInput.value, bookPagesInput.value, readStatus))
 
-        createBookCard()
-        background.remove()
-        form.remove()
+        if (!bookTitleInput.value || !bookAuthorInput.value || !bookPagesInput.value) {
+            return
+        }
+            library.push(new Book(bookTitleInput.value, bookAuthorInput.value, bookPagesInput.value, readStatus))
+    
+            createBookCard()
+            background.remove()
+            form.remove()
+
     }
     
     //appending everything to page
