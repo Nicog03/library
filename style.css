@@ -7,18 +7,33 @@
     font-family: "Shippori Antique", sans-serif;
 }
 
-body {
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: black;
+    color: white;
+
+    min-height: 5vw;
+    max-height: 10vw;
+}
+
+main {
+    
     min-height: 100vh;
     max-height: fit-content;
-
+    
+    padding: 10px;
     display: grid;
+    justify-content: center;
     gap: 10px;
     grid-auto-rows: 200px;
     grid-template: repeat(auto-fit, 250px) / repeat(auto-fit, 200px);
 }
 
-body > button, 
-body > div {
+main > button, 
+main > div {
     height: 250px;
     width: 200px;
     border: black solid 3px;
@@ -26,26 +41,26 @@ body > div {
     cursor: pointer;
 }
 
-body > button {
+main > button {
     font-size: 60px;
 }
 
-body > div  {
+main > div  {
     display: grid;
     padding: 5px;
     grid-template-rows: auto 1fr auto auto;
 }
 
-body > div h3 {
+main > div h3 {
     font-size: 1.5em;
 }
 
-body > div h4 {
+main > div h4 {
     font-size: 1.1em;
     color: grey;
 }
 
-body > div p {
+main > div p {
     justify-self: end;
     align-self: flex-end;
 }
