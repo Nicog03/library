@@ -49,6 +49,7 @@ main > div  {
     display: grid;
     padding: 5px;
     grid-template-rows: auto 1fr auto auto;
+    position: relative;
 }
 
 main > div h3 {
@@ -190,6 +191,34 @@ form > div:last-of-type {
     gap: 20px;
     background-color: #cdcdcd;
     white-space: nowrap;
+}
+
+.read-style::after,
+.not-read-style::after {
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    
+    background-position: -30px 90px;
+    background-repeat: no-repeat;
+    opacity: 0.1;
+    
+    transition: ease-out 0.3s;
+}
+
+.read-style::after {
+    background-image: url(/SVGs/check-mark.svg);
+    background-size: 95%;
+}
+
+.not-read-style::after {
+    background-image: url(/SVGs/x-mark.svg);
+    background-size: 100%;
 }
 
 #read-input {
