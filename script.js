@@ -86,7 +86,7 @@ function createForm() {
     }
     
     //appending everything to page
-    body.appendChild(form)
+    main.appendChild(form)
     
     form.appendChild(closeButton)
     form.appendChild(titleDiv)
@@ -144,23 +144,23 @@ function createBookCard() {
         container.appendChild(bookPages)
         container.appendChild(bookReadStatus)
 
-        body.appendChild(container)
+        main.appendChild(container)
     }
 
-    let oldButton = document.querySelector('body > button')
+    let oldButton = document.querySelector('main > button')
     oldButton.remove()
 
     let button = document.createElement('button')
     button.setAttribute('type', 'button')
     button.textContent = '+'
-    body.appendChild(button)
+    main.appendChild(button)
 
     button.onclick = () => {
         !document.querySelector('form') ? createForm() : null
     }
 } 
 
-const body = document.querySelector('body')
+const main = document.querySelector('main')
 const button = document.querySelector('button')
 
 button.onclick = () => {
