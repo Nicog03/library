@@ -120,18 +120,14 @@ function createBookCard() {
     let bookReadStatus = document.createElement('button')
     let bottomSection = document.createElement('div')
     bookReadStatus.setAttribute('type', 'button')
-    bookReadStatus.classList.add('read-status')
 
     for (let i=0; i < library.length; i++) {
         bookTitle.textContent = library[i].title
         bookAuthor.textContent = library[i].author
-        bookPages.textContent = library[i].pages + ' pages'
+        bookPages.textContent = library[i].pages + ' pgs.'
 
-        bookReadStatus.classList.remove('true')
-        bookReadStatus.classList.remove('false')
-
-        library[i].read ? bookReadStatus.classList.add('true') :
-        bookReadStatus.classList.add('false')
+        library[i].read ? bookReadStatus.textContent = 'read' :
+        bookReadStatus.textContent = 'not read'
 
         container.classList.remove('read-style')
         container.classList.remove('not-read-style')
@@ -139,27 +135,35 @@ function createBookCard() {
         library[i].read ? container.classList.add('read-style') :
         container.classList.add('not-read-style')
 
+        bookReadStatus.onmouseenter = () => {
+            container.classList.add('hover')
+        }
+
+        bookReadStatus.onmouseleave = () => {
+            container.classList.remove('hover')
+        }
+
         bookReadStatus.onclick = () => {
+            container.classList.add('click')
+            setTimeout(() => {container.classList.remove('click')}, 200)
+
             if (library[i].read) {
-                bookReadStatus.classList.remove('true')
-                bookReadStatus.classList.add('false')
+                bookReadStatus.textContent = 'not read'
                 container.classList.remove('read-style')
                 container.classList.add('not-read-style')
                 library[i].read = false
             } else {
-                bookReadStatus.classList.remove('false')
-                bookReadStatus.classList.add('true')
+                bookReadStatus.textContent = 'read'
                 container.classList.remove('not-read-style')
                 container.classList.add('read-style')
                 library[i].read = true
             }
         }
 
-        
         container.appendChild(bookTitle)
         container.appendChild(bookAuthor)
-        bottomSection.appendChild(bookPages)
         bottomSection.appendChild(bookReadStatus)
+        bottomSection.appendChild(bookPages)
         container.appendChild(bottomSection)
 
         main.appendChild(container)

@@ -265,3 +265,11 @@ main > div > div > button {
 main > div > div > button:hover {
     background-color: #232323;
 }
+
+.hover::after {
+    opacity: .2;
+}
+
+.click::after {
+    opacity: .4;
+}
