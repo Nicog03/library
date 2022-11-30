@@ -132,16 +132,24 @@ function createBookCard() {
         library[i].read ? bookReadStatus.classList.add('true') :
         bookReadStatus.classList.add('false')
 
+        container.classList.remove('read-style')
+        container.classList.remove('not-read-style')
+
+        library[i].read ? container.classList.add('read-style') :
+        container.classList.add('not-read-style')
+
         bookReadStatus.onclick = () => {
             if (library[i].read) {
                 bookReadStatus.classList.remove('true')
                 bookReadStatus.classList.add('false')
+                container.classList.remove('read-style')
+                container.classList.add('not-read-style')
                 library[i].read = false
-
-
             } else {
                 bookReadStatus.classList.remove('false')
                 bookReadStatus.classList.add('true')
+                container.classList.remove('not-read-style')
+                container.classList.add('read-style')
                 library[i].read = true
             }
         }
