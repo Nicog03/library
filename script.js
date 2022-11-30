@@ -118,13 +118,14 @@ function createBookCard() {
     let bookAuthor = document.createElement('h4')
     let bookPages = document.createElement('p')
     let bookReadStatus = document.createElement('button')
+    let bottomSection = document.createElement('div')
     bookReadStatus.setAttribute('type', 'button')
     bookReadStatus.classList.add('read-status')
 
     for (let i=0; i < library.length; i++) {
         bookTitle.textContent = library[i].title
         bookAuthor.textContent = library[i].author
-        bookPages.textContent = library[i].pages
+        bookPages.textContent = library[i].pages + ' pages'
 
         bookReadStatus.classList.remove('true')
         bookReadStatus.classList.remove('false')
@@ -154,10 +155,12 @@ function createBookCard() {
             }
         }
 
+        
         container.appendChild(bookTitle)
         container.appendChild(bookAuthor)
-        container.appendChild(bookPages)
-        container.appendChild(bookReadStatus)
+        bottomSection.appendChild(bookPages)
+        bottomSection.appendChild(bookReadStatus)
+        container.appendChild(bottomSection)
 
         main.appendChild(container)
     }
