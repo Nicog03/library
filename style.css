@@ -65,6 +65,16 @@ main > div p {
     align-self: flex-end;
 }
 
+.background {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    left: 0;
+    top: 0;
+    background-color: black;
+    opacity: 50%;
+}
+
 form {
     position: fixed;
 
