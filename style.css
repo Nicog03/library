@@ -54,11 +54,11 @@ main > div  {
 
 main > div > div {
     display: flex;
-    padding: 5px;
     justify-content: space-between;
     align-items: center;
     background-color: grey;
     color: white;
+    padding-right: 5px;
 }
 
 main > div h3 {
@@ -72,7 +72,6 @@ main > div h4 {
 
 main > div p {
     justify-self: end;
-    align-self: flex-end;
 }
 
 .background {
@@ -213,7 +212,7 @@ form > div:last-of-type {
     height: 100%;
     z-index: -1;
     
-    background-position: -30px 90px;
+    background-position: -30px 60px;
     background-repeat: no-repeat;
     opacity: 0.1;
     
@@ -254,22 +253,15 @@ form > div:last-of-type {
     width: 17px;
 }
 
-.false::after {
-    content: '';
-    position: absolute;
-    left: auto;
-    top: 0;
-    right: 0;
-    display: inline-block;
+main > div > div > button {
+    color: white;
     background-color: black;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    transition: ease-out 0.3s;
 }
 
-.true::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: auto;
-    display: inline-block;
-    background-color: black;
+main > div > div > button:hover {
+    background-color: #232323;
 }
