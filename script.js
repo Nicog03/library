@@ -12,12 +12,16 @@ let library = []
 function createForm() {
     let form = document.createElement('form')
     
+    let background = document.createElement('div')
+    background.classList.add('background')
+
     //close button
     let closeButton = document.createElement('button')
     closeButton.setAttribute('type', 'button')
     closeButton.textContent = '×'
 
     closeButton.onclick = () => {
+        background.remove()
         form.remove()
     }
 
@@ -82,12 +86,15 @@ function createForm() {
         library.push(new Book(bookTitleInput.value, bookAuthorInput.value, bookPagesInput.value, readStatus))
 
         createBookCard()
+        background.remove()
         form.remove()
     }
     
     //appending everything to page
-    main.appendChild(form)
     
+    main.appendChild(background)
+    main.appendChild(form)
+
     form.appendChild(closeButton)
     form.appendChild(titleDiv)
     titleDiv.appendChild(bookTitleInput)
