@@ -36,7 +36,7 @@ function createForm() {
     bookTitleInput.setAttribute('placeholder', ' ')
     bookTitleInput.setAttribute('required', '')
     
-    //author input segment
+//author input segment
     let authorDiv = document.createElement('div')
     let bookAuthorLabel = document.createElement('label')
     bookAuthorLabel.setAttribute('for', 'author-input')
@@ -47,18 +47,20 @@ function createForm() {
     bookAuthorInput.setAttribute('placeholder', ' ')
     bookAuthorInput.setAttribute('required', '')
     
-    //pages input segment
+//pages input segment
     let pagesDiv = document.createElement('div')
     let bookPagesLabel = document.createElement('label')
     bookPagesLabel.setAttribute('for', 'pages-input')
     bookPagesLabel.textContent = 'Number of pages'
     
     let bookPagesInput = document.createElement('input')
+    bookPagesInput.setAttribute('type', 'tel')
+    bookPagesInput.setAttribute('pattern', '[0-9]')
     bookPagesInput.setAttribute('id', 'pages-input')
     bookPagesInput.setAttribute('placeholder', ' ')
     bookPagesInput.setAttribute('required', '')
     
-    //read input segment
+//read input segment
     let readDiv = document.createElement('div')
     let readStatusLabel = document.createElement('label')
     readStatusLabel.setAttribute('for', 'read-input')
@@ -80,13 +82,13 @@ function createForm() {
         }
     }
 
-    //button segment
+//button segment
     let createButton = document.createElement('button')
     createButton.textContent = 'Create Book'
     
     createButton.onclick = () => {
 
-        if (!bookTitleInput.value || !bookAuthorInput.value || !bookPagesInput.value) {
+        if (!bookTitleInput.value || !bookAuthorInput.value || !bookPagesInput.value || isNaN(bookPagesInput.value)) {
             return
         }
             library.push(new Book(bookTitleInput.value, bookAuthorInput.value, bookPagesInput.value, readStatus))
