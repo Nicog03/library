@@ -220,12 +220,12 @@ form > div:last-of-type {
 }
 
 .read-style::after {
-    background-image: url(/SVGs/check-mark.svg);
+    background-image: url(./SVGs/check-mark.svg);
     background-size: 95%;
 }
 
 .not-read-style::after {
-    background-image: url(/SVGs/x-mark.svg);
+    background-image: url(./SVGs/x-mark.svg);
     background-size: 100%;
 }
 
