@@ -242,6 +242,8 @@ form > div:last-of-type {
     background-color: #000000;
     color: white;
     padding: 5px 10px;
+    cursor: pointer;
+    transition: ease-out 0.3s;
 }
 
 .read-status {
@@ -267,7 +269,8 @@ main > div > div > button {
     transition: ease-out 0.3s;
 }
 
-main > div > div > button:hover {
+main > div > div > button:hover,
+#read-input:hover {
     background-color: #232323;
 }
 
