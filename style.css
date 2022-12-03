@@ -7,6 +7,11 @@
     font-family: "Shippori Antique", sans-serif;
 }
 
+*::selection {
+    background-color: black;
+    color: white;
+}
+
 header {
     display: flex;
     align-items: center;
@@ -38,11 +43,11 @@ main > div {
     width: 200px;
     border: black solid 3px;
     box-shadow: black 1px 1px, 2px 2px, 3px 3px;
-    cursor: pointer;
 }
 
 main > button {
     font-size: 60px;
+    cursor: pointer;
 }
 
 main > div  {
