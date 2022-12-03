@@ -283,3 +283,11 @@ main > div > div > button:hover,
 .click::after {
     opacity: .4;
 }
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+    background-color: black;
+    color: white;
+}
