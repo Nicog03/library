@@ -36,8 +36,7 @@ main {
     display: grid;
     justify-content: center;
     gap: 10px;
-    grid-auto-rows: 200px;
-    grid-template: repeat(auto-fit, 250px) / repeat(auto-fit, 200px);
+    grid-template: repeat(auto-fit, 250px) / repeat(3, 200px);
 }
 
 main > button, 
