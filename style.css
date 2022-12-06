@@ -12,6 +12,12 @@
     color: white;
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 header {
     display: flex;
     align-items: center;
@@ -25,10 +31,7 @@ header {
 }
 
 main {
-    
-    min-height: 100vh;
-    max-height: fit-content;
-    
+    flex: 1;
     padding: 10px;
     display: grid;
     justify-content: center;
