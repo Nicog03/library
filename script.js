@@ -123,25 +123,31 @@ function createForm() {
 }
 
 function createBookCard() {
-
-    console.log(library)
-
-    let container = document.createElement('div')
-    let topDiv = document.createElement('div')
-    let deleteBookButton = document.createElement('button')
-    deleteBookButton.innerHTML = xSVG
-    let bookTitle = document.createElement('h3')
-    let bookAuthor = document.createElement('h4')
-    let bookPages = document.createElement('p')
-    let bookReadStatus = document.createElement('button')
-    let bottomSection = document.createElement('div')
-    bookReadStatus.setAttribute('type', 'button')
+    
+    let allBookCards = document.querySelectorAll('main > div')
+        allBookCards.forEach( card => {card.remove()} )
 
     for (let i=0; i < library.length; i++) {
+        
+        let container = document.createElement('div')
+        let topDiv = document.createElement('div')
+        let bottomSection = document.createElement('div')
+        
+        let bookTitle = document.createElement('h3')
         bookTitle.textContent = library[i].title
+        
+        let bookAuthor = document.createElement('h4')
         bookAuthor.textContent = library[i].author
+        
+        let bookPages = document.createElement('p')
         bookPages.textContent = library[i].pages + ' pgs.'
-
+        
+        let deleteBookButton = document.createElement('button')
+        deleteBookButton.innerHTML = xSVG
+        
+        let bookReadStatus = document.createElement('button')
+        bookReadStatus.setAttribute('type', 'button')
+        
         library[i].read ? bookReadStatus.textContent = 'read' :
         bookReadStatus.textContent = 'not read'
 
@@ -150,6 +156,18 @@ function createBookCard() {
 
         library[i].read ? container.classList.add('read-style') :
         container.classList.add('not-read-style')
+        
+        main.appendChild(container)
+        
+        container.appendChild(topDiv)
+        topDiv.appendChild(bookTitle)
+        topDiv.appendChild(deleteBookButton)
+        container.appendChild(bookAuthor)
+        container.appendChild(bottomSection)
+        bottomSection.appendChild(bookReadStatus)
+        bottomSection.appendChild(bookPages)
+
+    //functions
 
         bookReadStatus.onmouseenter = () => {
             container.classList.add('hover')
@@ -180,17 +198,9 @@ function createBookCard() {
             delete library[i]
             library = library.filter(Boolean)
             container.remove()
+ 
+            createBookCard()
         }
-
-        container.appendChild(topDiv)
-        topDiv.appendChild(bookTitle)
-        topDiv.appendChild(deleteBookButton)
-        container.appendChild(bookAuthor)
-        bottomSection.appendChild(bookReadStatus)
-        bottomSection.appendChild(bookPages)
-        container.appendChild(bottomSection)
-
-        main.appendChild(container)
     }
 
     let oldButton = document.querySelector('main > button')
