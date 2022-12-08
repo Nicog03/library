@@ -16,6 +16,9 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-image: url(./imgs/pattern.jpg);
+    background-position: 50%;
+    backdrop-filter: invert();
 }
 
 header {
@@ -34,12 +37,13 @@ main {
     z-index: 1;
     align-self: center;
     justify-content: center;
-    background-color: rgb(222, 222, 222);
+    background-color: white;
+    border: black solid 3px;
     flex: 1;
     padding: 10px;
     display: grid;
     gap: 10px;
-    width: clamp(430px, 90vw, 640px) ;
+    width: clamp(436px, 90vw, 646px) ;
     grid-template: repeat(auto-fit, 250px) / repeat(auto-fit, 200px);
 }
 
