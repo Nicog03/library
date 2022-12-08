@@ -18,14 +18,23 @@ function createForm() {
     let background = document.createElement('div')
     background.classList.add('background')
 
+    setTimeout( () => {
+        background.classList.add('active')
+    }, 1)
+
     //close button
     let closeButton = document.createElement('button')
     closeButton.setAttribute('type', 'button')
     closeButton.textContent = '×'
 
     closeButton.onclick = () => {
-        background.remove()
-        form.remove()
+
+        background.classList.remove('active')
+
+        setTimeout( () => {
+            background.remove()
+            form.remove()
+        }, 100)
     }
 
 //title input segment

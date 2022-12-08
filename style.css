@@ -109,14 +109,18 @@ main > div p {
 }
 
 .background {
+    backdrop-filter: blur(0px) brightness(100%);
     z-index: 1;
     position: fixed;
     height: 100vh;
     width: 100vw;
     left: 0;
     top: 0;
-    background-color: black;
-    opacity: 50%;
+    transition: ease-out 0.3s;
+}
+
+.active {
+    backdrop-filter: blur(2px) brightness(50%)
 }
 
 form {
