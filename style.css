@@ -18,7 +18,6 @@ body {
     flex-direction: column;
     background-image: url(./imgs/pattern.jpg);
     background-position: 50%;
-    backdrop-filter: invert();
 }
 
 header {
